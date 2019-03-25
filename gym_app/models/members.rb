@@ -21,4 +21,11 @@ class Member
     @id = new_member.first['id'].to_i
   end
 
+  def self.all
+    sql = 'SELECT * FROM members'
+    members = SqlRunner.run(sql)
+    return members.map { |member| Member.new(member)  }
+  end
+
+  binding.pry
 end

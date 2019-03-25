@@ -20,4 +20,11 @@ class Session
     @id = new_session.first['id'].to_i
   end
 
+  def self.all
+    sql = 'SELECT * FROM sessions'
+    sessions = SqlRunner.run(sql)
+    return sessions.map { |session| Session.new(session)  }
+  end
+
+  biding.pry
 end
