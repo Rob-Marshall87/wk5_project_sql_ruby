@@ -20,7 +20,7 @@ get '/gym/members/new' do #new
   erb ( :new )
 end
 
-post '/gym/students' do #create
+post '/gym/members' do #create
   @new_member = Member.new(params)
   @new_member.save
   erb ( :create )
@@ -29,4 +29,16 @@ end
 get '/gym/members/:id' do # show
   @member = Member.find_by_id( params[:id] )
   erb( :show )
+end
+
+get '/gym/members/:id/edit' do # edit
+  @member = Member.find_by_id( params[:id] )
+  @sessions = Session.all
+  erb( :edit )
+end
+
+post '/gym/members/:id' do # update
+  member = Member.new(params)
+  member.update
+  redirect to "/gym/members/#{params['id']}"
 end
