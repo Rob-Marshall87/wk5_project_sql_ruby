@@ -42,3 +42,9 @@ post '/gym/members/:id' do # update
   member.update
   redirect to "/gym/members/#{params['id']}"
 end
+
+post '/gym/members/:id/delete' do # delete
+  member = Member.find_by_id(params[:id])
+  member.delete()
+  redirect to '/gym/members'
+end

@@ -3,6 +3,6 @@
 <p>Age: <%= @member.age %></p>
 <p>Session: <%= Session.find_by_id(@member.session).type %></p>
 <p><a href="/gym/members/<%= @member.id %>/edit">Edit Member Info</a></p>
-<form method="post" action="/gym/members<%= @member.id %>/delete">
+<form method="post" action="/gym/members/<%= @member.id %>/delete">
   <input type="submit" value="Delete Member"/>
 </form>
