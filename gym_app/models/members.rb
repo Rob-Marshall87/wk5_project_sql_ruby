@@ -34,5 +34,18 @@ class Member
     return Member.new(member_hash)
   end
 
+  def self.delete_all
+    sql = "DELETE FROM members"
+    SqlRunner.run( sql )
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM members
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run( sql, values )
+  end
+
+
   # binding.pry
 end

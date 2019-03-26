@@ -33,5 +33,17 @@ class Session
     return Session.new(session_hash)
   end
 
+  def self.delete_all
+    sql = "DELETE FROM sessions"
+    SqlRunner.run( sql )
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM sessions
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run( sql, values )
+  end
+
   # binding.pry
 end
