@@ -1,0 +1,8 @@
+<h1>All Gym Members</h1>
+<% for member in @members %>
+  <p>First name: <%= member.first_name  %></p>
+  <p>Last name: <%= member.last_name %></p>
+  <p>Session: <%= Session.find_by_id(member.session).type %></p>
+  <p>Age: <%= member.age  %></p>
+  <br>
+<% end %>

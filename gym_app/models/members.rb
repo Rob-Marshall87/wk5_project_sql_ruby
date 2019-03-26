@@ -27,5 +27,12 @@ class Member
     return members.map { |member| Member.new(member)  }
   end
 
-  binding.pry
+  def self.find_by_id(id)
+    sql = 'SELECT * FROM members WHERE id = $1'
+    values = [id]
+    member_hash = SqlRunner.run(sql,values).first
+    return Member.new(member_hash)
+  end
+
+  # binding.pry
 end

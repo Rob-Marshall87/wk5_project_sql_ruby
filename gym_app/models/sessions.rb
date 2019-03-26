@@ -26,5 +26,12 @@ class Session
     return sessions.map { |session| Session.new(session)  }
   end
 
-  biding.pry
+  def self.find_by_id(id)
+    sql = 'SELECT * FROM sessions WHERE id = $1'
+    values = [id]
+    session_hash = SqlRunner.run(sql,values).first
+    return Session.new(session_hash)
+  end
+
+  # binding.pry
 end
