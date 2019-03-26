@@ -7,7 +7,7 @@ require_relative('../models/members')
 also_reload('../models/*')
 
 get '/gym' do
-  erb(:home )
+  erb(:"members/home" )
 end
 
 get '/gym/members' do #index

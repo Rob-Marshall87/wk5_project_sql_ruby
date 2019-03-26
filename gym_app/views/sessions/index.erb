@@ -1,0 +1,7 @@
+<h1>All Gym Sessions</h1>
+<% for session in @sessions %>
+  <p>Type: <%= session.type  %></p>
+  <p>Instructor: <%= session.instructor %></p>
+  <p>Time: <%= session.time %></p>
+  <br>
+<% end %>
