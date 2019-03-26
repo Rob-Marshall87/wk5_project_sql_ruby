@@ -45,5 +45,20 @@ class Session
     SqlRunner.run( sql, values )
   end
 
+  def update()
+    sql = "UPDATE sessions SET (type, instructor, time) =
+    ($1, $2, $3)
+    WHERE id = $4"
+    values = [@type, @instructor, @time, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM members
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
+  end
+
   # binding.pry
 end
