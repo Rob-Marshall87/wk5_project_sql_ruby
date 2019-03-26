@@ -2,9 +2,9 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 
-require_relative('./models/sessions')
-require_relative('./models/members')
-also_reload('./models/*')
+require_relative('../models/sessions')
+require_relative('../models/members')
+also_reload('../models/*')
 
 get '/gym' do
   erb(:home )
@@ -12,29 +12,29 @@ end
 
 get '/gym/members' do #index
   @members = Member.all
-  erb( :index )
+  erb( :"members/index" )
 end
 
 get '/gym/members/new' do #new
   @sessions = Session.all
-  erb ( :new )
+  erb ( :"members/new" )
 end
 
 post '/gym/members' do #create
   @new_member = Member.new(params)
   @new_member.save
-  erb ( :create )
+  erb ( :"members/create" )
 end
 
 get '/gym/members/:id' do # show
   @member = Member.find_by_id( params[:id] )
-  erb( :show )
+  erb( :"members/show" )
 end
 
 get '/gym/members/:id/edit' do # edit
   @member = Member.find_by_id( params[:id] )
   @sessions = Session.all
-  erb( :edit )
+  erb( :"members/edit" )
 end
 
 post '/gym/members/:id' do # update

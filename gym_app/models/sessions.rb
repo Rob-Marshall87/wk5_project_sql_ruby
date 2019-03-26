@@ -54,7 +54,7 @@ class Session
   end
 
   def delete()
-    sql = "DELETE FROM members
+    sql = "DELETE FROM sessions
     WHERE id = $1"
     values = [@id]
     SqlRunner.run( sql, values )
