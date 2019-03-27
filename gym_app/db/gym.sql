@@ -1,5 +1,7 @@
+DROP TABLE IF EXISTS bookings;
 DROP TABLE IF EXISTS members;
 DROP TABLE IF EXISTS sessions;
+
 
 CREATE TABLE sessions(
   id SERIAL8 PRIMARY KEY,
@@ -15,3 +17,9 @@ CREATE TABLE members(
   age INT4,
   session INT8 REFERENCES sessions(id) ON DELETE CASCADE
 );
+
+CREATE TABLE bookings(
+  id SERIAL8 PRIMARY KEY,
+  session_id INT8 REFERENCES sessions(id) ON DELETE CASCADE,
+  member_id INT8 REFERENCES members(id) ON DELETE CASCADE
+)
