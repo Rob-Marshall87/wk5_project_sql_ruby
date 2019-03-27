@@ -24,12 +24,12 @@ post '/gym/sessions' do #create
   @new_session.save
   erb ( :"sessions/create" )
 end
-#
-# get '/gym/members/:id' do # show
-#   @member = Member.find_by_id( params[:id] )
-#   erb( :"members/show" )
-# end
-#
+
+get '/gym/sessions/:id' do # show
+  @session = Session.find_by_id( params[:id] )
+  erb( :"sessions/show" )
+end
+
 # get '/gym/members/:id/edit' do # edit
 #   @member = Member.find_by_id( params[:id] )
 #   @sessions = Session.all
