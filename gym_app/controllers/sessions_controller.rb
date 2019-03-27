@@ -35,11 +35,11 @@ get '/gym/sessions/:id/edit' do # edit
   erb( :"sessions/edit" )
 end
 
-# post '/gym/members/:id' do # update
-#   member = Member.new(params)
-#   member.update
-#   redirect to "/gym/members/#{params['id']}"
-# end
+post '/gym/sessions/:id' do # update
+  session = Session.new(params)
+  session.update
+  redirect to "/gym/sessions/#{params['id']}"
+end
 #
 # post '/gym/members/:id/delete' do # delete
 #   member = Member.find_by_id(params[:id])
