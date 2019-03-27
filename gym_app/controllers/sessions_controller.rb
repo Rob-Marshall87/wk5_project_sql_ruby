@@ -30,12 +30,11 @@ get '/gym/sessions/:id' do # show
   erb( :"sessions/show" )
 end
 
-# get '/gym/members/:id/edit' do # edit
-#   @member = Member.find_by_id( params[:id] )
-#   @sessions = Session.all
-#   erb( :"members/edit" )
-# end
-#
+get '/gym/sessions/:id/edit' do # edit
+  @session = Session.find_by_id( params[:id] )
+  erb( :"sessions/edit" )
+end
+
 # post '/gym/members/:id' do # update
 #   member = Member.new(params)
 #   member.update
