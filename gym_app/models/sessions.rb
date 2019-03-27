@@ -57,7 +57,14 @@ class Session
     sql = "DELETE FROM sessions
     WHERE id = $1"
     values = [@id]
-    SqlRunner.run( sql, values )
+    SqlRunner.run(sql, values)
+  end
+
+  def members()
+    sql = "SELECT * FROM members WHERE session = $1"
+    values = [@id]
+    members_hash = SqlRunner.run(sql, values)
+    return members_hash.map { |member| Member.new(member) }
   end
 
   # binding.pry

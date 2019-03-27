@@ -2,6 +2,7 @@
 <p>Instructor: <%= @session.instructor %></p>
 <p>Time: <%= @session.time %></p>
 <p><a href="/gym/sessions/<%= @session.id %>/edit">Edit Session Info</a></p>
+<p><a href="/gym/sessions/<%= @session.id %>/members">Show All Members</a></p>
 <form method="post" action="/gym/sessions/<%= @session.id %>/delete">
   <input type="submit" value="Delete Session"/>
 </form>
