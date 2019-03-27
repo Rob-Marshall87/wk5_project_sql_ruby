@@ -40,9 +40,9 @@ post '/gym/sessions/:id' do # update
   session.update
   redirect to "/gym/sessions/#{params['id']}"
 end
-#
-# post '/gym/members/:id/delete' do # delete
-#   member = Member.find_by_id(params[:id])
-#   member.delete()
-#   redirect to '/gym/members'
-# end
+
+post '/gym/sessions/:id/delete' do # delete
+  session = Session.find_by_id(params[:id])
+  session.delete()
+  redirect to '/gym/sessions'
+end
