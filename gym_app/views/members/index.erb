@@ -4,5 +4,7 @@
   <p>Last name: <%= member.last_name %></p>
   <p>Session: <%= Session.find_by_id(member.session).type %></p>
   <p>Age: <%= member.age  %></p>
+  <p><a href="/gym/members/<%= member.id %>">More Options</a></p>
+
   <br>
 <% end %>
