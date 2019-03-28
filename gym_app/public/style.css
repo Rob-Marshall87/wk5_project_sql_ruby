@@ -1,0 +1,50 @@
+body {
+  padding: 30px;
+  font-family: 'Times';
+  color: #0909bc;
+  background-image: url("/background_image.jpg");
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: darkred;
+}
+
+#menu {
+  width: 220px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.menu-item {
+  display: inline-block;
+  flex-grow: 1;
+}
+
+#logo {
+  text-align: center;
+}
+
+#menu-outer{
+  height: 45px;
+  background: url("/barbell.jpg");
+}
+
+.table {
+  display: table;
+  margin: 0 auto;
+}
+
+ul#horizontal-list li{
+  min-width: 696px;
+  list-style: none;
+  padding-top: 20px;
+}
+
+ul#horizontal-list li{
+  display: inline;
+}

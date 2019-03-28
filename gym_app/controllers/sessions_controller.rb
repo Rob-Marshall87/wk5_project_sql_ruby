@@ -47,7 +47,7 @@ post '/gym/sessions/:id/delete' do # delete
   redirect to '/gym/sessions'
 end
 
-get '/gym/sessions/:id/members' do
+get '/gym/sessions/:id/members' do #finding members by session
   session = Session.find_by_id( params[:id] )
   @members = session.members
   erb( :"sessions/members")

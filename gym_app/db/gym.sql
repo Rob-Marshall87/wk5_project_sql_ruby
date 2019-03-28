@@ -18,8 +18,8 @@ CREATE TABLE members(
   session INT8 REFERENCES sessions(id) ON DELETE CASCADE
 );
 
-CREATE TABLE bookings(
-  id SERIAL8 PRIMARY KEY,
-  session_id INT8 REFERENCES sessions(id) ON DELETE CASCADE,
-  member_id INT8 REFERENCES members(id) ON DELETE CASCADE
-)
+-- CREATE TABLE bookings(
+--   id SERIAL8 PRIMARY KEY,
+--   session_id INT8 REFERENCES sessions(id) ON DELETE CASCADE,
+--   member_id INT8 REFERENCES members(id) ON DELETE CASCADE
+-- );

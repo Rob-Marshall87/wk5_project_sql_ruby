@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Gym</title>
+  <title>Project Gym</title>
   <link type="text/css" rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-  <nav>
-    <ul>
-      <li><a href="/">Gym Home Page</a></li>
-      <li><a href="/gym/members">All Gym Members</a></li>
-      <li><a href="/gym/members/new">New Member Sign Up</a></li>
-      <li><a href="/gym/sessions">All Gym Sessions</a></li>
-      <li><a href="/gym/sessions/new">New Session</a></li>
-    </ul>
-  </nav>
+  <div id="menu-outer">
+    <div class="table">
+      <nav id="menu">
+        <ul id="horizontal-list">
+          <li><a href="/">Gym Home Page</a></li>
+          <li><a href="/gym/members">All Gym Members</a></li>
+          <li><a href="/gym/members/new">New Member Sign Up</a></li>
+          <li><a href="/gym/sessions">All Gym Sessions</a></li>
+          <li><a href="/gym/sessions/new">New Session</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
   <%= yield %>
 </body>
 </html>
