@@ -1,8 +1,34 @@
 body {
   padding: 30px;
-  font-family: 'Times';
+  font-family: 'Arial';
   color: #0909bc;
-  background-image: url("/background_image.jpg");
+}
+
+#welcome {
+  font-family: 'Arial';
+  text-align: left;
+  position: relative;
+  animation-name: welcome_fun;
+  animation-duration: 10s;
+}
+
+@keyframes welcome_fun {
+  0%   {color:red; left:10px; top:10px;}
+  25%  {color:yellow; left:10px; top:10px;}
+  50%  {color:blue; left:10px; top:10px;}
+  75%  {color:green; left:10px; top:10px;}
+  100% {color:red; left:10px; top:10px;}
+}
+
+img::after {
+    content: url("/avengers_homepage.png");
+    position: absolute;
+    top: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -2;
+    background-color: white;
 }
 
 a {
@@ -14,8 +40,18 @@ a:hover {
   color: darkred;
 }
 
+.table {
+  width: 100%;
+}
+
 #menu {
-  width: auto;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+}
+
+#menu-outer {
+  width: 100%;
   display: flex;
   margin: 0 auto;
 }
@@ -51,12 +87,28 @@ h1{
 }
 
 #member-wrapper {
-  margin-left: 300px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
 }
+
 .member {
-  border: 5px double;
-  margin: 0 35px 30px 0;
-  padding: 25px;
+  align-self: center;
+  background: rgba(146, 151, 151, 0.8);
+  border: 5px solid;
+  margin: 10px;
+  padding: 10px;
   width: 200px;
-  display: inline-block;
+  color: darkred
+}
+
+#form {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  width: 250px;
+  border: 2px solid;
+  border-radius: 2px;
+  border-color: black;
+  color: black;
 }

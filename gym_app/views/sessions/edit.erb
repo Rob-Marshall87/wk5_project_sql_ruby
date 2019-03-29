@@ -1,5 +1,5 @@
 <h1>Edit Session</h1>
-<form action="/gym/sessions/<%=@session.id%>" method="post">
+<form action="/gym/sessions/<%=@session.id%>" method="post" id="form">
   <label for="type">Type: </label>
   <input type="text" id="type" name="type" value="<%= @session.type%>">
   <br>
@@ -11,6 +11,6 @@
   <label for="time">Time: </label>
   <input type="text" id="time" name="time" value="<%= @session.time %>">
   <br>
-  
+
   <input type="submit" value="Submit application">
 </form>

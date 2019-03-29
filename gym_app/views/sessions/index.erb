@@ -1,8 +1,15 @@
 <h1>All Gym Sessions</h1>
-<% for session in @sessions %>
-  <p>Type: <%= session.type  %></p>
-  <p>Instructor: <%= session.instructor %></p>
-  <p>Time: <%= session.time %></p>
-  <p><a href="/gym/sessions/<%= session.id %>">More Info</a></p>
+
+<div id="member-wrapper">
+  <% for session in @sessions %>
+
+  <div class="member">
+    <p>Type: <%= session.type  %></p>
+    <p>Instructor: <%= session.instructor %></p>
+    <p>Time: <%= session.time %></p>
+    <p><a href="/gym/sessions/<%= session.id %>">More Options</a></p>
+  </div>
   <br>
-<% end %>
+
+  <% end %>
+</div>
